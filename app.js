@@ -1,8 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
+var chalk = require('chalk');
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -39,6 +42,11 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const port = 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost: ${chalk.bgGreen(port)}` )
+})
 
 
 //HELLO WORLD! EXAMPLE
